@@ -1,0 +1,36 @@
+20180708
+
+- https://www.smashingmagazine.com/2016/07/improving-user-flow-through-page-transitions/
+  - Originally used the Web Animation API (link below) but it has limited support.
+  - https://developer.mozilla.org/en-US/docs/Web/API/Web_Animations_API#Browser_compatibility
+  - Used a css transition instead for the animation.
+
+- The Wrong Way
+  document.addEventListener('DOMContentLoaded', function() {
+    // Animate in
+  });
+
+  document.addEventListener('beforeunload', function() {
+    // Animate out
+  });
+
+  - We don’t know how long the next page will take to load, so the animation might not look fluid.
+  - We can’t create transitions that combine content from the previous and next pages.
+
+- The Right Way
+  - Involves pushState AJAX (or PJAX) navigation
+  - PJAX = pushState AJAX
+  - Essentially turns website into a kind of single-page website.
+  - Achieves smooth and pleasant transitions, but will benefit from other advantages.
+
+- Caveats And Limitations
+  - Make sure we affect the correct links. For example, we should ignore...
+    - All links with target="_blank".
+    - All links to external domains
+    - Control/Command + click (which also opens the page in a new tab).
+  - Update elements outside of the main content container.
+    - <title>, active class for the menulinks need to be changed manually.
+  - Need to manually take care of the JavaScript lifecycle — binding and unbinding certain events.
+    - For example if an click eventlistener is added to all links.
+    - This will only apply to the links that are in the initial view.
+    - The links that is loaded via the fetch will not have the eventlisteners binded to them.
