@@ -1,0 +1,29 @@
+@charset 'utf-8';
+@import '_normalize';
+@import '_normalizeCustomConfig';
+@import '_variable';
+@import '_font';
+@import '_debugger';
+
+.mainWrapper {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  justify-content: center;
+  width: 100vw;
+}
+
+
+
+// BOOTSTRAP NOTES & RESOLUTION REFERENCE
+// iPhone SE = 320 * 568px
+// iPhone 7 = 375 * 667px
+// iPhone 7 Plus = 414 * 736px
+// iPad & iPad mini = 768 * 1024px
+// iPad Pro = 1024 * 1366px
+// Macbook Air 13-inch = 1440 * 900px
+// Macbook Pro 15-inch = 2560 * 1600px
+// ----------------------------------
+@media (min-width: 768px) and (max-width: 1024px) {}
+@media (min-width: 1025px) {}

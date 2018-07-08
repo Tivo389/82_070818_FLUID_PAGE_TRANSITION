@@ -1,0 +1,80 @@
+html {
+  font-size: 62.5%;
+}
+
+h1, h2, h3, h4, h5, h6, p, a {
+  color: $colorBlack;
+  line-height: 125%;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: $ffHeader;
+  margin: 0 0 0.25em 0;
+}
+
+p, a {
+  font-family: $ffBody;
+  margin: 0;
+}
+
+p + p {
+  margin: 0.75em 0 0 0;
+}
+
+h1 {
+  font-size: $fsH1;
+}
+
+h2 {
+  font-size: $fsH2;
+}
+
+h3 {
+  font-size: $fsH3;
+}
+
+h4 {
+  font-size: $fsH4;
+}
+
+h5 {
+  font-size: $fsH5;
+}
+
+h6 {
+  font-size: $fsH6;
+  font-weight: bolder;
+}
+
+p {
+  font-size: $fsP;
+}
+
+a {
+  font-size: $fsP;
+  &:visited, &:focus, &:active {
+    color: $colorBlack;
+    outline: none;
+    text-decoration: none;
+  }
+}
+
+
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  html {
+    font-size: 66.5%;
+  }
+  h1, h2, h3, h4, h5, h6, p, a {
+    line-height: 130%;
+  }
+}
+
+@media (min-width: 1025px) {
+  html {
+    font-size: 70.5%;
+  }
+  h1, h2, h3, h4, h5, h6, p, a {
+    line-height: 135%;
+  }
+}
